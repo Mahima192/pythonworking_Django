@@ -1,0 +1,22 @@
+<!-- nurse_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <!-- Nurse List Section -->
+        <div class="row">
+            <div class="col-md-7 mx-auto p-3 form-container">
+                <h2 class="text-white bg-dark text-center p-3" style="font-family: 'Garamond'; border: 2px solid white; padding: 10px;">
+                    Nurse List
+                </h2>
+                <ul class="list-group">
+                    {% for nurse in nurses %}
+                        <!-- Display Nurse Information Here -->
+                    {% endfor %}
+                </ul>
+                <a href="{% url 'nurse_add' %}" class="btn btn-success text-light mt-3" style="font-family: 'Garamond'; font-weight: bold;">Add Nurse</a>
+            </div>
+        </div>
+        <!-- End Nurse List Section -->
+    </div>
+{% endblock %}

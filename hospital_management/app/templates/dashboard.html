@@ -1,0 +1,23 @@
+<!-- dashboard.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <!-- Dashboard Section -->
+        <div class="row">
+            <div class="col-md-7 mx-auto p-3 form-container">
+                <h2 class="text-white bg-dark text-center p-3" style="font-family: 'Garamond'; border: 2px solid white; padding: 10px;">
+                    Dashboard
+                </h2>
+                <div class="d-grid gap-2">
+                    <a href="{% url 'doctor_list' %}" class="btn btn-success text-light mt-3" style="font-family: 'Garamond'; font-weight: bold;">Doctor Management</a>
+                    <a href="{% url 'patient_list' %}" class="btn btn-success text-light mt-3" style="font-family: 'Garamond'; font-weight: bold;">Patient Management</a>
+                    <a href="{% url 'nurse_list' %}" class="btn btn-success text-light mt-3" style="font-family: 'Garamond'; font-weight: bold;">Nurse Management</a>
+                    <a href="{% url 'ephi_list' %}" class="btn btn-success text-light mt-3" style="font-family: 'Garamond'; font-weight: bold;">EPHI Management</a>
+                    <a href="{% url 'insurance_list' %}" class="btn btn-success text-light mt-3" style="font-family: 'Garamond'; font-weight: bold;">Insurance Management</a>
+                </div>
+            </div>
+        </div>
+        <!-- End Dashboard Section -->
+    </div>
+{% endblock %}

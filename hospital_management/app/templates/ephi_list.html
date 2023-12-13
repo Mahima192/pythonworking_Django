@@ -1,0 +1,22 @@
+<!-- ephi_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <!-- EPHI List Section -->
+        <div class="row">
+            <div class="col-md-7 mx-auto p-3 form-container">
+                <h2 class="text-white bg-dark text-center p-3" style="font-family: 'Garamond'; border: 2px solid white; padding: 10px;">
+                    EPHI List
+                </h2>
+                <ul class="list-group">
+                    {% for ephi in ephis %}
+                        <!-- Display EPHI Information Here -->
+                    {% endfor %}
+                </ul>
+                <a href="{% url 'ephi_add' %}" class="btn btn-success text-light mt-3" style="font-family: 'Garamond'; font-weight: bold;">Add EPHI</a>
+            </div>
+        </div>
+        <!-- End EPHI List Section -->
+    </div>
+{% endblock %}

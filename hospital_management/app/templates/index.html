@@ -1,0 +1,81 @@
+<!-- authentication.html -->
+{% extends 'base.html' %}
+{% block content %}
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ error_message }}
+        <label for="username">Username:</label>
+        <input type="text" name="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br>
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Dashboard</h2>
+        <!-- Doctor Section -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3>Doctor CRUD Form</h3>
+                <form method="post" action="{% url 'doctor_create' %}">
+                    {% csrf_token %}
+                    <!-- Add your Doctor form fields here -->
+                    <input type="submit" class="btn btn-success" value="Create Doctor">
+                </form>
+                <!-- Add list and other CRUD operations for Doctor -->
+            </div>
+        </div>
+
+        <!-- Nurse Section -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3>Nurse CRUD Form</h3>
+                <form method="post" action="{% url 'nurse_create' %}">
+                    {% csrf_token %}
+                    <!-- Add your Nurse form fields here -->
+                    <input type="submit" class="btn btn-success" value="Create Nurse">
+                </form>
+                <!-- Add list and other CRUD operations for Nurse -->
+            </div>
+        </div>
+
+        <!-- Insurance Section -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3>Insurance CRUD Form</h3>
+                <form method="post" action="{% url 'insurance_create' %}">
+                    {% csrf_token %}
+                    <!-- Add your Insurance form fields here -->
+                    <input type="submit" class="btn btn-success" value="Create Insurance">
+                </form>
+                <!-- Add list and other CRUD operations for Insurance -->
+            </div>
+        </div>
+
+        <!-- Patient Section -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3>Patient CRUD Form</h3>
+                <form method="post" action="{% url 'patient_create' %}">
+                    {% csrf_token %}
+                    <!-- Add your Patient form fields here -->
+                    <input type="submit" class="btn btn-success" value="Create Patient">
+                </form>
+                <!-- Add list and other CRUD operations for Patient -->
+            </div>
+        </div>
+
+        <!-- EPHI Section -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3>EPHI CRUD Form</h3>
+                <form method="post" action="{% url 'ephi_create' %}">
+                    {% csrf_token %}
+                    <!-- Add your EPHI form fields here -->
+                    <input type="submit" class="btn btn-success" value="Create EPHI">
+                </form>
+                <!-- Add list and other CRUD operations for EPHI -->
+            </div>
+        </div>
+    </div>
+{% endblock %}

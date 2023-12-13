@@ -1,0 +1,28 @@
+<!-- insurance_form.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <!-- Insurance Form Section -->
+        <div class="row">
+            <div class="col-md-4 mx-auto p-3 form-container">
+                <div class="container-md d-flex justify-content-center bg-dark">
+                    <h2 class="text-white bg-dark text-center p-3" style="font-family: 'Garamond';">
+                        Update Insurance Details
+                    </h2>
+                </div>
+                <br />
+
+                <form action="/update/{{ insurance.id }}" method="post">
+                    {% csrf_token %}
+                    <!-- Insurance Form Fields Here -->
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-success text-light bg-dark" style="font-family: 'Garamond'; font-weight: bold;" type="submit">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End Insurance Form Section -->
+    </div>
+{% endblock %}

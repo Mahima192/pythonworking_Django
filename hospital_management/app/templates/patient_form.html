@@ -1,0 +1,28 @@
+<!-- patient_form.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <!-- Patient Form Section -->
+        <div class="row">
+            <div class="col-md-4 mx-auto p-3 form-container">
+                <div class="container-md d-flex justify-content-center bg-dark">
+                    <h2 class="text-white bg-dark text-center p-3" style="font-family: 'Garamond';">
+                        Update Patient Details
+                    </h2>
+                </div>
+                <br />
+
+                <form action="/update/{{ patient.id }}" method="post">
+                    {% csrf_token %}
+                    <!-- Patient Form Fields Here -->
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-success text-light bg-dark" style="font-family: 'Garamond'; font-weight: bold;" type="submit">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End Patient Form Section -->
+    </div>
+{% endblock %}
